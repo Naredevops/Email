@@ -1,7 +1,12 @@
-$EmailFrom = ""
-$EmailTo = ""
-$Subject = ""
-$Body = ""
+$EmailFrom = "narender5t9.devops@gmail.com"
+$EmailTo = "narender6t9.devops@gmail.com"
+$Subject = "PF Account UAN not activated"
+$Body = "Hi PF Team,
+
+It's been a long time, Can you please privde feedback on this item.
+
+Regards
+Narender Reddy."
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = 587
 # $SMTPUsername = ""
