@@ -16,5 +16,5 @@ jobs:
       - name: Run PowerShell script
         shell: pwsh
         run: |
-          $scriptPath = "/Naredevops/Email"  # Update path to your PowerShell script
+          $scriptPath = "/naredevops/email"  # Update path to your PowerShell script
           pwsh -File $scriptPath
