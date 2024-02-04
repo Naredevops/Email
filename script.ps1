@@ -5,7 +5,7 @@ $Body = "This is a test email sent from GitHub Actions using PowerShell."
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = 587
 $SMTPUsername = "narender5t9.devops@gmail.com"
-$SMTPPassword = "Dysc44pks12" # Use your Gmail app password here
+$SMTPPassword = "bbhb canf dpcd creb" # Use your Gmail app password here
 
 # Create email message
 $Message = New-Object System.Net.Mail.MailMessage $EmailFrom, $EmailTo
