@@ -9,12 +9,18 @@ jobs:
   send_email:
     runs-on: ubuntu-latest
 
+    env:
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      EMAIL_TO: narender6t9.devops@gmail.com
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
       - name: Run PowerShell script
-        shell: pwsh
         run: |
-          $scriptPath = "script.ps1"  # Update path to your PowerShell script
+          $scriptPath = "script.ps1"
           pwsh -File $scriptPath
