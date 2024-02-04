@@ -15,23 +15,33 @@ Narender Reddy.
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = 587
 
-# Create email message
-$Message = New-Object System.Net.Mail.MailMessage
-$Message.From = $EmailFrom
-$Message.To.Add($EmailTo)
-$Message.Subject = $Subject
-$Message.Body = $Body
-$Message.IsBodyHTML = $true
+# Debugging output
+Write-Output "SMTP_USERNAME: $($env:SMTP_USERNAME)"
+Write-Output "SMTP_PASSWORD: $($env:SMTP_PASSWORD)"
+Write-Output "EmailFrom: $EmailFrom"
 
-# Configure SMTP client
-$SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
-$SMTPClient.EnableSsl = $true
-$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($SMTPUsername, $SMTPPassword)
+# Check if $EmailFrom is null or empty
+if ([string]::IsNullOrEmpty($EmailFrom)) {
+    Write-Error "SMTP_USERNAME environment variable is null or empty."
+} else {
+    # Create email message
+    $Message = New-Object System.Net.Mail.MailMessage
+    $Message.From = $EmailFrom
+    $Message.To.Add($EmailTo)
+    $Message.Subject = $Subject
+    $Message.Body = $Body
+    $Message.IsBodyHTML = $true
 
-# Send the email
-try {
-    $SMTPClient.Send($Message)
-    Write-Output "Email sent successfully."
-} catch {
-    Write-Error "Failed to send email: $($_.Exception.Message)"
+    # Configure SMTP client
+    $SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
+    $SMTPClient.EnableSsl = $true
+    $SMTPClient.Credentials = New-Object System.Net.NetworkCredential($SMTPUsername, $SMTPPassword)
+
+    # Send the email
+    try {
+        $SMTPClient.Send($Message)
+        Write-Output "Email sent successfully."
+    } catch {
+        Write-Error "Failed to send email: $($_.Exception.Message)"
+    }
 }
