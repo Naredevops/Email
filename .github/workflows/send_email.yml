@@ -9,11 +9,6 @@ jobs:
   send_email:
     runs-on: ubuntu-latest
 
-    env:
-      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      EMAIL_TO: narender6t9.devops@gmail.com
-
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
