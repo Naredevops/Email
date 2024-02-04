@@ -1,7 +1,10 @@
 $EmailFrom = ${{ secrets.SMTP_USERNAME }}
 $EmailTo = "narender6t9.devops@gmail.com"
+$secrets.SMTP_PASSWORD = "bbhb canf dpcd creb"
+$secrets.SMTP_USERNAME = "narender5t9.devops@gmail.com"
 $Subject = "PF Account UAN not activated"
 $Body = "Hi PF Team,
+
 
 It's been a long time, Can you please provide feedback on this item.
 
