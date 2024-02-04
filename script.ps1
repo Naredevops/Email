@@ -1,5 +1,5 @@
 # Assign secrets to variables
-$EmailFrom = $env:SMTP_USERNAME
+$EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
 $SMTPPassword = $env:SMTP_PASSWORD
 $SMTPUsername = "narender5t9.devops@gmail.com"
