@@ -1,6 +1,7 @@
-$EmailFrom = ${{ secrets.SMTP_USERNAME }}
+# Assign secrets to variables
+$EmailFrom = $env:SMTP_USERNAME
 $EmailTo = "narender6t9.devops@gmail.com"
-$SMTPPassword = "${{ secrets.SMTP_PASSWORD }}"
+$SMTPPassword = $env:SMTP_PASSWORD
 $SMTPUsername = "narender5t9.devops@gmail.com"
 $Subject = "PF Account UAN not activated"
 $Body = @"
