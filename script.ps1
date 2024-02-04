@@ -3,11 +3,11 @@ $EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
 $SMTPPassword = "bbhb canf dpcd creb"
 $SMTPUsername = "narender5t9.devops@gmail.com"
-$Subject = "PF Account UAN not activated"
+$Subject = "Swaraj Emi not released"
 $Body = @"
-Hi PF Team,
+Hi Team,
 
-It's been a long time, Can you please provide feedback on this item.
+It's been a long time, can you please pay EMI.
 
 Regards
 Narender Reddy.
