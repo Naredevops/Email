@@ -1,6 +1,3 @@
- 20 changes: 20 additions & 0 deletions20  
-.github/workflows/send_email.yml
-@@ -0,0 +1,20 @@
 name: Send Email
 
 on:
@@ -19,5 +16,5 @@ jobs:
       - name: Run PowerShell script
         shell: pwsh
         run: |
-          $scriptPath = "./path/to/your/script.ps1"  # Update path to your PowerShell script
+          $scriptPath = "script.ps1"  # Update path to your PowerShell script
           pwsh -File $scriptPath
