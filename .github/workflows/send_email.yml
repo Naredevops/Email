@@ -1,0 +1,20 @@
+name: Send Email
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run PowerShell script
+        shell: pwsh
+        run: |
+          $scriptPath = "./path/to/your/script.ps1"  # Update path to your PowerShell script
+          pwsh -File $scriptPath
