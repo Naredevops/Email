@@ -2,7 +2,7 @@
 $EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
 $SMTPPassword = "bbhb canf dpcd creb"
-$SMTPUsername = "narender"
+$SMTPUsername = "narender5t9.devops@gmail.com"
 $Subject = "PF Account UAN not activated"
 $Body = @"
 Hi PF Team,
