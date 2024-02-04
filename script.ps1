@@ -1,13 +1,15 @@
-# Assign secrets to variables
-$EmailFrom = "narender5t9.devops@gmail.com"
-$EmailTo = "narender6t9.devops@gmail.com"
-$SMTPPassword = "bbhb canf dpcd creb"
-$SMTPUsername = "narender5t9.devops@gmail.com"
-$Subject = "Swaraj Emi not released"
-$Body = @"
-Hi Team,
+# Assign secrets to variables from environment variables
+$EmailFrom = $env:SMTP_USERNAME
+$EmailTo = $env:EMAIL_TO
+$SMTPPassword = $env:SMTP_PASSWORD
+$SMTPUsername = $env:SMTP_USERNAME
 
-It's been a long time, can you please pay EMI.
+# Subject, body, and SMTP server details
+$Subject = "PF Account UAN not activated"
+$Body = @"
+Hi PF Team,
+
+It's been a long time, Can you please provide feedback on this item.
 
 Regards
 Narender Reddy.
