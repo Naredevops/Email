@@ -16,7 +16,9 @@ $SMTPServer = "smtp.gmail.com"
 $SMTPPort = 587
 
 # Create email message
-$Message = New-Object System.Net.Mail.MailMessage $EmailFrom, $EmailTo
+$Message = New-Object System.Net.Mail.MailMessage
+$Message.From = $EmailFrom
+$Message.To.Add($EmailTo)
 $Message.Subject = $Subject
 $Message.Body = $Body
 $Message.IsBodyHTML = $true
