@@ -1,3 +1,6 @@
+ 20 changes: 20 additions & 0 deletions20  
+.github/workflows/send_email.yml
+@@ -0,0 +1,20 @@
 name: Send Email
 
 on:
@@ -7,27 +10,14 @@ on:
 
 jobs:
   send_email:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run PowerShell script to send email
+      - name: Run PowerShell script
         shell: pwsh
         run: |
-          # Define PowerShell script
-          $Username = $env:EMAIL_USERNAME
-          $Password = $env:EMAIL_PASSWORD
-          $SMTPServer = "smtp.example.com"
-          $Port = 587  # Update with the appropriate port number
-          $From = "your-email@example.com"
-          $To = "recipient@example.com"
-          $Subject = "Test Email"
-          $Body = "This is a test email from GitHub Actions."
-
-          # Send email using Send-MailMessage cmdlet
-          Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -SmtpServer $SMTPServer -Port $Port -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Username, (ConvertTo-SecureString -String $Password -AsPlainText -Force)) -UseSsl
-          
-        env:
-          EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          $scriptPath = "./path/to/your/script.ps1"  # Update path to your PowerShell script
+          pwsh -File $scriptPath
