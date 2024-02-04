@@ -1,21 +1,12 @@
-name: Send Email
+# Define SMTP server settings
+$Username = $env:EMAIL_USERNAME
+$Password = $env:EMAIL_PASSWORD
+$SMTPServer = "smtp.example.com"
+$Port = 587  # Update with the appropriate port number
+$From = "your-email@example.com"
+$To = "recipient@example.com"
+$Subject = "Test Email"
+$Body = "This is a test email from GitHub Actions."
 
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  send_email:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Run PowerShell script
-        run: |
-          $scriptPath = "script.ps1"
-          pwsh -File $scriptPath
+# Send email using Send-MailMessage cmdlet
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -SmtpServer $SMTPServer -Port $Port -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Username, (ConvertTo-SecureString -String $Password -AsPlainText -Force)) -UseSsl
