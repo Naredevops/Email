@@ -1,16 +1,14 @@
-$EmailFrom = "narender5t9.devops@gmail.com"
+$EmailFrom = ${{ secrets.SMTP_USERNAME }}
 $EmailTo = "narender6t9.devops@gmail.com"
 $Subject = "PF Account UAN not activated"
 $Body = "Hi PF Team,
 
-It's been a long time, Can you please privde feedback on this item.
+It's been a long time, Can you please provide feedback on this item.
 
 Regards
 Narender Reddy."
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = 587
-# $SMTPUsername = ""
-# $SMTPPassword = "" # Use your Gmail app password here
 
 # Create email message
 $Message = New-Object System.Net.Mail.MailMessage $EmailFrom, $EmailTo
@@ -21,7 +19,7 @@ $Message.IsBodyHTML = $true
 # Configure SMTP client
 $SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
 $SMTPClient.EnableSsl = $true
-$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($SMTPUsername, $SMTPPassword)
+$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($EmailFrom, ${{ secrets.SMTP_PASSWORD }})
 
 # Send the email
 try {
