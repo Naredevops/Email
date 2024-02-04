@@ -15,5 +15,6 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run PowerShell script
-        run: pwsh -Command "& { $scriptPath = 'script.ps1'; .\$scriptPath }"
+      run: |
+          $scriptPath = "script.ps1"
+          pwsh -File $scriptPath
