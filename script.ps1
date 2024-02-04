@@ -1,15 +1,15 @@
 $EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
-$Subject = "Test Gmail from Azure Devps"
-$Body = "This is a test email by using PowerShell, hence we are doing test results."
-$Signature = "Regards`nNarender Reddy"
+$Subject = "Test Gmail from GitLab"
+$Body = "This is a test email by using PowerShell, hence we are doing test azure."
+$Signature = "`r`nRegards`r`nNarender Reddy"
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = "587"
 $SMTPUsername = "narender5t9.devops@gmail.com"
 $SMTPPassword = "bbhb canf dpcd creb" # Use your Gmail app password here
 
 # Concatenate message body and signature with line breaks
-$FullBody = "$Body`n`n$Signature"
+$FullBody = "$Body$Signature"
 
 # Create email message
 $Message = New-Object System.Net.Mail.MailMessage $EmailFrom, $EmailTo
