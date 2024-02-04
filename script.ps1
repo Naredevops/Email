@@ -14,9 +14,13 @@ $Message.Body = $Body
 $Message.IsBodyHTML = $true
 
 # Configure SMTP client
-$SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
+# $SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
+# $SMTPClient.EnableSsl = $true
+# $SMTPClient.Credentials = New-Object System.Net.NetworkCredential($SMTPUsername, $SMTPPassword)
+
+$SMTPClient = New-Object System.Net.Mail.SmtpClient($smtp.gmail.com, $587)
 $SMTPClient.EnableSsl = $true
-$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($SMTPUsername, $SMTPPassword)
+$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($narender5t9.devops@gmail.com, $Dysc44pks12)
 
 # Send the email
 try {
