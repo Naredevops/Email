@@ -12,15 +12,15 @@ $SMTPPassword = "bbhb canf dpcd creb" # Use your Gmail app password here
 $FullBody = "$Body$Signature"
 
 # Create email message
-$Message = New-Object System.Net.Mail.MailMessage $EmailFrom, $EmailTo
+$Message = New-Object System.Net.Mail.MailMessage($EmailFrom, $EmailTo)
 $Message.Subject = $Subject
 $Message.Body = $FullBody
 $Message.IsBodyHTML = $true
 
 # Configure SMTP client
-$SMTPClient = New-Object System.Net.Mail.SmtpClient($smtp.gmail.com, $587)
+$SMTPClient = New-Object System.Net.Mail.SmtpClient("smtp.gmail.com", 587)  # Fixed issue with SMTP server string
 $SMTPClient.EnableSsl = $true
-$SMTPClient.Credentials = New-Object System.Net.NetworkCredential($narender5t9.devops@gmail.com, $Dysc44pks12)
+$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("narender5t9.devops@gmail.com", $SMTPPassword)  # Fixed issue with email formatting
 
 # Send the email
 try {
