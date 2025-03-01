@@ -1,7 +1,7 @@
 $EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
 $Subject = "Test Gmail from GitLab"
-$Body = "Terraform is a part of the AWS DevOps Competency and also an AWS Partner Network (APN) advanced technology partner. It is similar to AWS Cloud Formation in the sense that it is also an “infrastructure as code” tool that allows you to create, update, and version your AWS infrastructure."
+$Body = "A console that allows users to observe functions "
 $Signature = "`r`nRegards`r`nNarender Reddy"
 $SMTPServer = "smtp.gmail.com"
 $SMTPPort = "587"
