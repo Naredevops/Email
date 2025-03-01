@@ -1,6 +1,6 @@
 $EmailFrom = "narender5t9.devops@gmail.com"
 $EmailTo = "narender6t9.devops@gmail.com"
-$Subject = "Test Gmail from GitLab"
+$Subject = "Test Gmail from BitBuket"
 $Body = "A console that allows users to observe functions "
 $Signature = "`r`nRegards`r`nNarender Reddy"
 $SMTPServer = "smtp.gmail.com"
